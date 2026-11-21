@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Questionário exploratório sobre espiritualidade, religião, filosofia e concepções de mundo.">
+<title>Teste – Espiritualidade</title>
+<style>
+:root{--bg:#f5f4f0;--paper:#fff;--ink:#202421;--muted:#69716c;--line:#e1e4df;--accent:#526c5b;--accent2:#dce8de;--soft:#f0f3ef;--warn:#fff5df;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:22px max(20px,calc((100vw - 900px)/2));background:#e8ede7;border-bottom:1px solid var(--line)}
+.brand{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+main{max-width:900px;margin:34px auto;padding:0 18px 60px}
+h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.08;margin:10px 0}
+h2{font-size:1.45rem;margin:0 0 12px}h3{font-size:1.05rem;margin:0 0 8px}
+p{margin:8px 0 14px}.muted{color:var(--muted)}.small{font-size:.88rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,4vw,30px);margin:16px 0;box-shadow:0 5px 20px #27352b08}
+.hero{padding:clamp(24px,5vw,44px);background:linear-gradient(135deg,#e8ede7,#f7f5ef)}
+.pill{display:inline-block;background:var(--accent2);color:#294333;border-radius:999px;padding:5px 11px;font-size:.78rem;font-weight:700}
+button{font:inherit;border:0;border-radius:999px;padding:12px 20px;background:var(--accent);color:#fff;font-weight:650;cursor:pointer}
+button.secondary{background:#edf1ed;color:var(--ink);border:1px solid var(--line)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.progress{height:8px;background:#e6e9e5;border-radius:20px;overflow:hidden;margin:14px 0 7px}.progress>div{height:100%;background:var(--accent);width:0;transition:width .2s}
+.step{display:none}.step.active{display:block}
+.question{padding:18px 0;border-bottom:1px solid var(--line)}.question:last-child{border:0}
+.qnum{color:var(--accent);font-weight:750;font-size:.8rem;letter-spacing:.04em}
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:12px}
+.scale label,.choice{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:10px 8px;cursor:pointer;background:#fff}
+.scale label{flex-direction:column;align-items:center;text-align:center;font-size:.8rem;min-height:72px}
+input[type=radio]{accent-color:var(--accent);margin-top:4px}
+.choice{margin:8px 0}.choice span{flex:1}
+fieldset{border:0;padding:0;margin:0}legend{font-weight:650;margin-bottom:8px}
+textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;resize:vertical}
+.notice{background:var(--warn);border:1px solid #f0dfb5;padding:13px 15px;border-radius:12px;font-size:.9rem}
+.dimension{margin:16px 0}.bar{height:10px;background:#e9ece8;border-radius:20px;overflow:hidden}.bar span{display:block;height:100%;background:var(--accent)}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.result{background:var(--soft);padding:15px;border-radius:13px}.affinity{border:1px solid var(--line);border-radius:14px;padding:15px;margin:10px 0;background:#fff}.affinity h4{margin:0 0 5px}.affinity .meta{font-size:.82rem;color:var(--muted)}.affinity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.level{display:inline-block;padding:3px 9px;border-radius:999px;background:var(--accent2);font-size:.76rem;font-weight:700;color:#294333}.conflict{background:#fff5df;color:#72521b}.catalog-note{font-size:.88rem;color:var(--muted)}.section-head{margin:26px 0 10px}.matchbar{height:7px;background:#e9ece8;border-radius:20px;overflow:hidden;margin:8px 0}.matchbar span{display:block;height:100%;background:var(--accent)}
+.tag{font-size:.76rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+footer{max-width:900px;margin:auto;padding:0 18px 35px;color:var(--muted);font-size:.82rem}
+@media(max-width:600px){.scale{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.scale label{padding:8px 3px;font-size:.7rem;min-height:78px}.scale label span{font-size:.67rem}}
+</style>
+</head>
+<body>
+<header><div class="brand">Instrumento exploratório</div></header>
+<main>
+<section id="intro" class="card hero">
+  <span class="pill">Autoconhecimento filosófico e espiritual</span>
+  <h1>Teste –<br>Espiritualidade</h1>
+  <p>Uma exploração das suas concepções sobre existência, transcendência, consciência, ética, natureza, práticas espirituais e pertencimento religioso.</p>
+  <p class="muted">Não existe resposta certa, perfil ideal ou obrigação de se identificar com uma religião. Você pode discordar, ter dúvidas ou não se reconhecer em nenhuma tradição.</p>
+  <div class="notice"><strong>Importante:</strong> este é um instrumento exploratório, não um teste psicológico, diagnóstico ou medida científica validada. As afinidades apresentadas são hipóteses interpretativas, não rótulos definitivos.</div>
+  <div class="actions"><button onclick="start()">Começar a exploração</button></div>
+</section>
+
+<section id="quiz" class="card step">
+  <div class="tag" id="phaseLabel">Etapa 1 de 3</div>
+  <h2 id="phaseTitle">Concepções e afinidades</h2>
+  <p class="muted" id="phaseDesc"></p>
+  <div class="progress"><div id="progressFill"></div></div><div class="small muted" id="progressText"></div>
+  <div id="questions"></div>
+  <div class="actions">
+    <button class="secondary" id="backBtn" onclick="back()">Voltar</button>
+    <button id="nextBtn" onclick="next()">Continuar</button>
+  </div>
+</section>
+
+<section id="deep" class="card step">
+  <div class="tag">Etapa 3 de 3 · Aprofundamento adaptativo</div>
+  <h2>Vamos explorar algumas respostas</h2>
+  <p class="muted">As perguntas abaixo são selecionadas conforme suas respostas anteriores. Elas não pressupõem que você tenha uma religião ou uma crença específica.</p>
+  <div id="deepQuestions"></div>
+  <div class="actions"><button class="secondary" onclick="showResults(false)">Pular aprofundamento</button><button onclick="showResults(true)">Concluir e analisar</button></div>
+</section>
+
+<section id="results" class="card step">
+  <div class="tag">Sua exploração</div>
+  <h2>Uma leitura do seu perfil</h2>
+  <p class="muted">A análise abaixo é preliminar e baseada nas respostas registradas nesta página.</p>
+  <div id="resultContent"></div>
+  <div id="affinityMap"></div>
+  <div id="deepAnalysis"></div>
+  <div class="actions">
+    <button onclick="downloadResult()">Baixar meu resultado</button>
+    <button class="secondary" onclick="copyResult()">Copiar síntese</button>
+    <button class="secondary" onclick="restart()">Refazer questionário</button>
+  </div>
+  <div class="notice" style="margin-top:18px">Esta versão já apresenta um mapa comparativo local. A análise generativa por IA, com interpretação contextualizada e novas perguntas em tempo real, depende da configuração de um endpoint seguro no servidor. Não insira chaves de API neste arquivo público.</div>
+</section>
+</main>
+<footer>Teste – Espiritualidade · Versão 0.2 · Mapa comparativo de afinidades. As respostas permanecem nesta sessão do navegador; a análise por IA depende de integração segura no servidor.</footer>
+
+<script>
+const likert = [
+["Existe uma dimensão da realidade que vai além daquilo que a ciência consegue explicar materialmente.", "transcendence"],
+["Acredito em um Deus pessoal, consciente, com vontade própria e capacidade de se relacionar com os seres humanos.", "theism"],
+["Considero possível a existência de múltiplas divindades ou manifestações do divino.", "pluralDivine"],
+["Acredito que exista uma dimensão espiritual independente do funcionamento biológico do cérebro.", "mind"],
+["A natureza, o universo ou a própria existência possuem uma dimensão sagrada.", "sacredNature"],
+["Experiências chamadas espirituais podem ser explicadas por fatores psicológicos, neurológicos e culturais, sem que seja necessário recorrer ao sobrenatural.", "naturalExplanation"],
+["A consciência pode continuar existindo após a morte física.", "afterlife"],
+["Acredito em reencarnação ou em múltiplas existências.", "reincarnation"],
+["As ações realizadas nesta vida podem produzir consequências espirituais em outras existências.", "karma"],
+["Existe uma alma ou essência individual que não pode ser reduzida ao corpo.", "soul"],
+["A morte encerra a experiência individual de consciência.", "death"],
+["Pode haver alguma forma de relação ou comunicação entre pessoas vivas e consciências de pessoas falecidas.", "spirits"],
+["Sinto ou reconheço a possibilidade de conexão com algo maior do que minha individualidade.", "connection"],
+["A oração é uma prática significativa para minha relação com o sagrado ou com a existência.", "prayer"],
+["A meditação pode produzir transformações importantes na minha experiência e na minha maneira de viver.", "meditation"],
+["Rituais ou cerimônias podem ter significado espiritual relevante.", "ritual"],
+["Lugares, objetos ou elementos da natureza podem adquirir significado sagrado.", "sacredObjects"],
+["A espiritualidade pode ser desenvolvida individualmente, sem orientação religiosa ou participação comunitária.", "independent"],
+["Existe uma ordem moral universal que não depende apenas das convenções sociais.", "moralOrder"],
+["Bondade, compaixão e responsabilidade podem ser fundamentadas sem crença religiosa.", "secularEthics"],
+["O sofrimento possui um significado ou propósito que vai além de suas causas materiais e sociais.", "suffering"],
+["O desenvolvimento moral e pessoal é mais importante do que a adesão a uma doutrina religiosa.", "personalGrowth"],
+["A existência humana possui uma finalidade ou propósito maior.", "purpose"],
+["Ciência e filosofia são suficientes para orientar nossa compreensão da realidade e nossas decisões éticas.", "reason"],
+["Tenho interesse em participar de uma comunidade para compartilhar experiências e reflexões espirituais.", "community"],
+["Uma tradição religiosa, seus textos e ensinamentos transmitidos são importantes para minha compreensão da existência.", "tradition"],
+["Eu aceitaria seguir orientações religiosas mesmo sem compreender suas justificativas.", "obedience"],
+["Tenho interesse em conhecer textos sagrados e diferentes interpretações religiosas.", "sacredTexts"],
+["É importante que uma religião reconheça a diversidade de interpretações e permita questionamentos.", "pluralism"],
+["Tenho resistência a instituições religiosas que reivindicam monopólio da verdade.", "antiInstitution"]
+];
+const extras = [
+{q:"Qual alternativa mais se aproxima da sua concepção sobre o divino?", key:"divine", opts:[
+"Existe um Deus pessoal, consciente e com vontade própria.",
+"Acredito em uma realidade divina, mas não necessariamente em um Deus pessoal.",
+"Acredito em múltiplas divindades ou manifestações do divino.",
+"Considero o universo e a natureza sagrados, sem necessariamente chamá-los de Deus.",
+"Não acredito em realidade divina ou sobrenatural.",
+"Não sei ou ainda não tenho posição definida."
+]},
+{q:"Qual alternativa representa melhor sua compreensão da morte?", key:"deathView", opts:[
+"A consciência individual continua após a morte.",
+"Existe reencarnação ou continuidade em outras existências.",
+"Pode existir alguma dimensão espiritual, mas não sei se a consciência individual continua.",
+"A morte encerra a consciência individual.",
+"Não sei ou não tenho posição definida."
+]},
+{q:"O que mais poderia motivar você a se aproximar de uma tradição ou prática espiritual?", key:"motivation", opts:[
+"Comunidade, pertencimento e convivência.",
+"Autoconhecimento, equilíbrio e desenvolvimento pessoal.",
+"Compreensão da existência, do universo e da natureza.",
+"Experiência espiritual, contemplação ou conexão com algo maior.",
+"Orientação ética e contribuição para a vida coletiva.",
+"Não tenho interesse em me aproximar de uma tradição ou prática."
+]},
+{q:"Qual é sua relação com instituições religiosas?", key:"institution", opts:[
+"Tenho identificação e gostaria de participar de uma comunidade.",
+"Tenho interesse, desde que haja liberdade para questionar e interpretar.",
+"Tenho interesse em conhecer, mas não sei se gostaria de participar.",
+"Prefiro práticas individuais, sem instituição.",
+"Tenho resistência a instituições religiosas.",
+"Não sei."
+]},
+{q:"Que tipo de reflexão mais desperta seu interesse?", key:"interest", opts:[
+"Ensinamentos religiosos e textos sagrados.",
+"Filosofia, ciência e ética sobre a existência.",
+"Práticas contemplativas e experiências espirituais.",
+"Relação entre humanidade, natureza e coletividade.",
+"História, cultura e diversidade das religiões.",
+"Não tenho interesse específico."
+]},
+{q:"Qual aspecto seria mais difícil de aceitar em uma religião ou tradição?", key:"barrier", opts:[
+"Regras morais e comportamentais rígidas.",
+"Obrigação de aceitar dogmas sem questionamento.",
+"Autoridade religiosa incontestável.",
+"Explicações sobrenaturais incompatíveis com minhas convicções.",
+"Práticas ou rituais obrigatórios.",
+"Não identifico uma dificuldade específica."
+]}
+];
+const deepBank = [
+{ id:"spiritualNature", q:"Quando você fala em dimensão espiritual, qual interpretação mais se aproxima da sua intuição?", opts:["Uma realidade ou dimensão que existe independentemente da interpretação humana.","Uma força ou energia que permeia a existência.","Uma experiência humana que pode ser compreendida psicológica e culturalmente.","Uma maneira simbólica de expressar conexão, sentido e admiração.","Ainda não sei."], when:()=>true },
+{ id:"divineNature", q:"Quando você considera a natureza ou o universo divinos, o que quer dizer?", opts:["Existe uma propriedade divina real na natureza, independentemente de como a interpretamos.","Chamar o universo de divino expressa sua grandiosidade e significado, sem afirmar uma propriedade sobrenatural.","Acredito em uma força universal real, mas não sei se ela é divina ou consciente.","O próprio universo pode ser uma forma de consciência ou realidade viva.","Ainda não consigo distinguir essas possibilidades."], when:()=>true },
+{ id:"purposeNature", q:"Qual concepção de propósito se aproxima mais da sua?", opts:["Existe um propósito definido por uma divindade ou inteligência superior.","O propósito é contribuir para a vida e o bem-estar coletivo.","O propósito é construído por cada pessoa ao longo da vida.","A existência não precisa ter um propósito maior.","Não sei."], when:()=>true },
+{ id:"universalForce", q:"Como você entende a relação entre uma possível força universal e o universo?", opts:["A força é a própria natureza e o universo.","A força permeia e constitui tudo o que existe, sem ser exatamente o universo.","A força é um princípio que dá origem ou sustenta o universo, podendo estar além da natureza.","A força é uma forma de consciência ou inteligência universal.","Não consigo definir."], when:()=>true },
+{ id:"humanInteraction", q:"Como você entende a possibilidade de interação humana com essa força?", opts:["A interação ocorre principalmente na experiência subjetiva, modificando percepção, comportamento e relação com o mundo.","A interação pode produzir efeitos reais além da experiência individual.","Práticas específicas podem estabelecer uma relação com essa força.","Essas possibilidades podem coexistir, mas não sei explicar os mecanismos ou limites.","Ainda não tenho uma posição definida."], when:()=>true },
+{ id:"practice", q:"Que tipo de experiência você teria mais interesse em conhecer, sem compromisso de adesão?", opts:["Meditação e contemplação.","Rituais e cerimônias de diferentes tradições.","Estudo filosófico e científico da consciência e da natureza.","Práticas de conexão com a natureza e cuidado coletivo.","Nenhuma prática específica por enquanto."], when:()=>true },
+{ id:"community", q:"Como seria uma comunidade espiritual ou filosófica confortável para você?", opts:["Uma comunidade com doutrina e práticas compartilhadas.","Um espaço plural, sem crenças obrigatórias e aberto ao questionamento.","Um grupo de estudos e reflexão, sem compromisso religioso.","Prefiro explorar individualmente.","Talvez; gostaria de conhecer antes."], when:()=>true },
+{ id:"afterlifeDetail", q:"Qual posição descreve melhor sua compreensão sobre a consciência após a morte?", opts:["A consciência individual continua e pode se relacionar com os vivos.","A consciência individual renasce em outras existências.","Pode existir continuidade espiritual, mas não sei se individual.","A experiência consciente termina com a morte do organismo.","Não tenho posição definida."], when:()=>true },
+{ id:"divinityDetail", q:"Qual relação com o divino parece mais plausível?", opts:["Uma divindade pessoal que conhece e se relaciona com as pessoas.","Uma realidade divina impessoal, imanente à natureza ou ao universo.","Várias divindades ou manifestações divinas.","Um princípio criador distinto do universo.","Não considero necessária uma realidade divina.","Ainda não sei."], when:()=>true },
+{ id:"practiceDetail", q:"Que papel as práticas espirituais poderiam ter?", opts:["Oração e devoção a uma divindade.","Meditação e treinamento da atenção/consciência.","Rituais, cerimônias e práticas comunitárias.","Práticas de conexão com a natureza e cuidado coletivo.","Estudo, reflexão e investigação sem prática ritual.","Nenhum papel importante para mim."], when:()=>true },
+{ id:"authorityDetail", q:"Como você se relaciona com tradições e autoridades religiosas?", opts:["Uma tradição revelada e sua autoridade são fundamentais.","Uma tradição pode orientar, mas deve permitir interpretação e questionamento.","Tenho interesse cultural e filosófico, sem compromisso de adesão.","Prefiro construir minha compreensão sem autoridade religiosa.","Não sei."], when:()=>true },
+{ id:"mindDetail", q:"Como você entende a relação entre consciência e natureza?", opts:["A consciência surge de processos físicos e biológicos.","A consciência pode ser uma propriedade fundamental da realidade.","O universo como totalidade pode possuir uma dimensão consciente.","Existe uma alma individual independente do corpo.","Não tenho posição definida."], when:()=>true }
+];
+let phase=0, answers={}, deepAnswers={}, currentQuestions=[], resultText="";
+const $=id=>document.getElementById(id);
+function start(){ $("intro").classList.remove("active");$("quiz").classList.add("active");phase=0;renderPhase(); }
+function renderPhase(){
+ const isLikert=phase===0, qs=isLikert?likert:extras;
+ $("phaseLabel").textContent=isLikert?"Etapa 1 de 3":"Etapa 2 de 3";
+ $("phaseTitle").textContent=isLikert?"Afirmações sobre suas concepções":"Questões complementares";
+ $("phaseDesc").textContent=isLikert?"Indique seu grau de concordância com cada afirmação. Use a opção intermediária quando depender do contexto, não souber ou não tiver posição definida.":"Escolha a alternativa que mais se aproxima de sua posição atual. Não é necessário que uma opção represente perfeitamente o que você pensa.";
+ $("progressFill").style.width=isLikert?"0%":"50%";
+ $("progressText").textContent=isLikert?"30 afirmações · escala de 1 a 5":"6 questões complementares";
+ $("backBtn").style.visibility=phase===0?"hidden":"visible";
+ $("questions").innerHTML="";
+ qs.forEach((q,i)=>{
+  const n=isLikert?i+1:31+i;
+  let el=document.createElement("div");el.className="question";
+  let inner=`<div class="qnum">QUESTÃO ${n}</div><fieldset><legend>${q[0]||q.q}</legend>`;
+  if(isLikert){
+   inner+=`<div class="scale">`+["1<br><span>Discordo totalmente</span>","2<br><span>Discordo parcialmente</span>","3<br><span>Não sei / depende</span>","4<br><span>Concordo parcialmente</span>","5<br><span>Concordo totalmente</span>"].map((label,j)=>`<label><input type="radio" name="q${i}" value="${j+1}" ${answers["q"+i]==j+1?"checked":""}><span>${label}</span></label>`).join("")+`</div>`;
+  }else{
+   inner+=q.opts.map((o,j)=>`<label class="choice"><input type="radio" name="e${i}" value="${j}" ${answers["e"+i]==j?"checked":""}><span>${o}</span></label>`).join("");
+  }
+  inner+="</fieldset>";el.innerHTML=inner;$("questions").appendChild(el);
+ });
+ $("nextBtn").textContent=isLikert?"Continuar":"Ver aprofundamento";
+}
+function back(){if(phase===1){phase=0;renderPhase();}}
+function next(){
+ const isLikert=phase===0, qs=isLikert?likert:extras, prefix=isLikert?"q":"e";
+ let missing=[];
+ qs.forEach((q,i)=>{let x=document.querySelector(`input[name="${prefix}${i}"]:checked`);if(x)answers[prefix+i]=isLikert?Number(x.value):Number(x.value);else missing.push(i);});
+ if(missing.length){alert("Responda às "+missing.length+" questão(ões) restantes para continuar. Você pode usar a opção intermediária quando não tiver uma posição definida.");return;}
+ if(phase===0){phase=1;renderPhase();window.scrollTo({top:0,behavior:"smooth"});}
+ else { $("quiz").classList.remove("active");$("deep").classList.add("active");renderDeep();window.scrollTo({top:0,behavior:"smooth"});}
+}
+function renderDeep(){
+ const prelim=calculateAffinities();
+ const selected=[deepBank[0],deepBank[1],deepBank[3],deepBank[4]];
+ const top=prelim.slice(0,5).map(x=>x.id);
+ if(top.some(x=>["spiritism","hindu","buddhism"].includes(x))) selected.push(deepBank.find(q=>q.id==="afterlifeDetail"));
+ if(top.some(x=>["pantheism","panentheism","monism","spinoza","naturalism","energy"].includes(x))) selected.push(deepBank.find(q=>q.id==="divinityDetail"));
+ if(answers["q13"]>=3 || answers["q14"]>=3 || answers["q15"]>=3 || top.some(x=>["buddhism","taoism","umbanda","candomble","energy"].includes(x))) selected.push(deepBank.find(q=>q.id==="practiceDetail"));
+ if(answers["q24"]>=3 || answers["q25"]>=3 || answers["q28"]>=3 || top.some(x=>["christianity","islam","judaism","umbanda","candomble","indigenous"].includes(x))) selected.push(deepBank.find(q=>q.id==="authorityDetail"));
+ if(answers["q3"]>=3 || answers["q9"]>=3 || top.some(x=>["panpsychism","idealism","monism","energy"].includes(x))) selected.push(deepBank.find(q=>q.id==="mindDetail"));
+ selected.push(deepBank[2]);
+ currentQuestions=[...new Map(selected.filter(Boolean).map(q=>[q.id,q])).values()];
+ $("deepQuestions").innerHTML="";
+ currentQuestions.forEach((q,i)=>{
+  let el=document.createElement("div");el.className="question";
+  el.innerHTML=`<div class="qnum">APROFUNDAMENTO ${i+1}</div><fieldset><legend>${q.q}</legend>`+q.opts.map((o,j)=>`<label class="choice"><input type="radio" name="d${q.id}" value="${j}" ${deepAnswers[q.id]===j?"checked":""}><span>${o}</span></label>`).join("")+`</fieldset>`;
+  $("deepQuestions").appendChild(el);
+ });
+}
+
+function score(){
+ const groups={transcendence:[0,1,2,3,4,5],existence:[6,7,8,9,10,11],practice:[12,13,14,15,16,17],ethics:[18,19,20,21,22,23],belonging:[24,25,26,27,28,29]};
+ let out={};
+ Object.entries(groups).forEach(([k,idx])=>{let vals=idx.map(i=>answers["q"+i]).filter(v=>v!==undefined);out[k]=vals.reduce((a,b)=>a+b,0)/vals.length;});
+ return out;
+}
+function interpretation(s){
+ let lines=[];
+ lines.push(["Transcendência e dimensão espiritual",s.transcendence,"Indica abertura ou reserva diante de dimensões espirituais e explicações naturalistas. Respostas distintas dentro da dimensão devem ser lidas em conjunto, não como contradição automática."]);
+ lines.push(["Existência, morte e consciência",s.existence,"Reúne crenças sobre continuidade da consciência, reencarnação, alma e morte. Alguns itens têm sentidos opostos; por isso, a média é apenas um indicador inicial."]);
+ lines.push(["Práticas e experiências",s.practice,"Indica interesse em conexão, oração, meditação, rituais e espiritualidade independente."]);
+ lines.push(["Ética e compreensão do mundo",s.ethics,"Observa a autonomia moral, a importância do desenvolvimento pessoal e a relação entre explicações científicas, filosofia e propósito."]);
+ lines.push(["Religião e pertencimento",s.belonging,"Observa abertura à comunidade e à tradição, em contraste com autonomia e resistência a autoridades exclusivistas."]);
+ return lines;
+}
+const affinityCatalog = [
+{id:"christianity",group:"Tradições religiosas",name:"Cristianismo — catolicismo e tradições protestantes/evangélicas",about:"Tradições centradas em Deus, em Jesus Cristo e em diferentes interpretações bíblicas, práticas comunitárias e doutrinas de salvação. Catolicismo e denominações protestantes têm diferenças internas importantes.",supports:"Crença em Deus pessoal, oração, continuidade após a morte, textos sagrados e comunidade.",tensions:"Não teísmo, rejeição de revelação/autoridade religiosa ou materialismo sobre a morte podem divergir de doutrinas centrais.",rules:[[1,1],[6,1],[13,1],[24,1],[25,1],[27,1],[28,1]]},
+{id:"islam",group:"Tradições religiosas",name:"Islamismo",about:"Tradição monoteísta centrada na unicidade de Deus (Allah), na revelação corânica, na profecia de Muhammad e em práticas religiosas e comunitárias.",supports:"Deus pessoal e único, oração/devoção, revelação, textos e comunidade.",tensions:"Pluralidade de divindades, rejeição de Deus pessoal ou recusa de qualquer autoridade revelada são divergências relevantes.",rules:[[1,1],[13,1],[25,1],[26,1],[27,1],[28,1],[2,-1]]},
+{id:"judaism",group:"Tradições religiosas",name:"Judaísmo",about:"Tradição religiosa, ética, cultural e histórica diversa, com centralidade da aliança, da Torá, da interpretação e da vida comunitária. Não se reduz a uma única posição sobre vida após a morte.",supports:"Monoteísmo, tradição textual, interpretação, ética e comunidade.",tensions:"Rejeição de qualquer dimensão divina ou desinteresse por tradição e comunidade podem reduzir a aproximação.",rules:[[1,1],[18,1],[24,1],[25,1],[27,1],[28,1]]},
+{id:"spiritism",group:"Tradições religiosas",name:"Espiritismo kardecista",about:"Doutrina organizada em torno da existência dos espíritos, continuidade da vida após a morte, reencarnação, evolução espiritual e consequências morais dos atos.",supports:"Continuidade da consciência, reencarnação, alma, comunicação espiritual e causalidade moral.",tensions:"A afirmação de que a morte encerra a consciência individual é uma divergência central.",rules:[[6,1],[7,1],[8,1],[9,1],[11,1],[10,-1]]},
+{id:"umbanda",group:"Tradições religiosas",name:"Umbanda",about:"Religião brasileira plural, com diferentes linhas e práticas; articula elementos como orixás, entidades, ancestralidade, caridade, mediunidade e rituais, de formas variadas entre terreiros.",supports:"Pluralidade de manifestações sagradas, práticas rituais, natureza, espiritualidade e comunidade.",tensions:"Rejeição de qualquer dimensão espiritual, mediunidade ou prática ritual pode indicar divergência. A diversidade interna impede generalizações.",rules:[[2,1],[11,1],[12,1],[15,1],[16,1],[24,1],[25,1]]},
+{id:"candomble",group:"Tradições religiosas",name:"Candomblé",about:"Conjunto de tradições afro-brasileiras com fundamentos próprios, culto aos orixás/voduns/inquices conforme as nações, ancestralidade, iniciação, comunidade e transmissão ritual. Não é uma versão de Umbanda.",supports:"Pluralidade sagrada, natureza, ritual, ancestralidade, tradição e pertencimento comunitário.",tensions:"Desinteresse por rituais, tradição e comunidade pode reduzir a afinidade; respostas gerais não permitem inferir compatibilidade com uma nação ou casa específica.",rules:[[2,1],[4,1],[15,1],[16,1],[24,1],[25,1],[27,1]]},
+{id:"buddhism",group:"Tradições religiosas",name:"Budismo — tradições Theravada e Mahayana",about:"Famílias de tradições diversas que investigam sofrimento, impermanência, não eu, ética e libertação. Muitas escolas incluem renascimento, mas não pressupõem uma alma imutável.",supports:"Meditação, desenvolvimento ético, transformação pessoal e investigação da experiência.",tensions:"Teísmo criador e crença em alma permanente não são pressupostos budistas; renascimento varia em formulação e importância entre tradições.",rules:[[14,1],[19,1],[21,1],[22,1],[23,1],[1,-1],[9,-1]]},
+{id:"zen",group:"Tradições religiosas",name:"Budismo Zen",about:"Tradição budista Mahayana com ênfase em prática meditativa, atenção, experiência direta e transformação da compreensão. Não equivale a uma filosofia secular de relaxamento.",supports:"Meditação, autonomia investigativa, prática e desenvolvimento pessoal.",tensions:"Crença em um Deus criador ou em uma alma individual permanente não é central ao Zen.",rules:[[14,1],[17,1],[19,1],[21,1],[23,1],[1,-1],[9,-1]]},
+{id:"hindu",group:"Tradições religiosas",name:"Hinduísmo — Vedanta (incluindo Advaita)",about:"Família ampla de escolas indianas. Advaita Vedanta entende Brahman como realidade última e investiga a relação entre Atman e Brahman; outras escolas Vedanta sustentam relações diferentes entre Deus, mundo e indivíduo.",supports:"Realidade última, dimensão espiritual, consciência, karma e continuidade/reencarnação em muitas escolas.",tensions:"Materialismo estrito e rejeição de qualquer continuidade espiritual divergem de muitas formulações; não se deve equiparar Brahman a energia física.",rules:[[0,1],[3,1],[7,1],[8,1],[9,1],[2,-1]]},
+{id:"taoism",group:"Tradições religiosas e filosóficas",name:"Taoismo — perspectivas filosóficas",about:"Tradição chinesa plural. O Tao é princípio/processo da realidade e da transformação; o taoismo religioso também inclui divindades, ritos e instituições, não devendo ser confundido com a vertente filosófica.",supports:"Natureza, transformação, interdependência, simplicidade e harmonização da ação humana com processos naturais.",tensions:"Uma concepção de força como energia manipulável não é equivalente ao Tao; as respostas não estabelecem adesão a práticas taoistas.",rules:[[4,1],[12,1],[14,1],[16,1],[17,1],[19,1],[22,1]]},
+{id:"indigenous",group:"Tradições religiosas",name:"Cosmologias e tradições espirituais indígenas",about:"Não constituem uma religião única. Povos distintos possuem cosmologias, práticas, línguas, relações territoriais e formas próprias de compreender humanos e outros seres.",supports:"Relações entre seres, território, ancestralidade, natureza e responsabilidade coletiva podem apresentar afinidades temáticas.",tensions:"O questionário não identifica pertencimento, conhecimento ou compatibilidade com um povo específico; não se deve generalizar nem apropriar práticas.",rules:[[4,1],[12,1],[15,1],[16,1],[17,1],[19,1]]},
+{id:"pantheism",group:"Filosofias e metafísicas",name:"Panteísmo",about:"Identifica o divino com a totalidade da realidade: Deus/Natureza não é um criador separado do universo.",supports:"Natureza ou universo considerados sagrados/divinos e princípio imanente.",tensions:"Afirmar uma força separada do universo pode afastar a posição do panteísmo estrito.",rules:[[4,1],[0,1],[1,-1]]},
+{id:"spinoza",group:"Filosofias e metafísicas",name:"Espinozismo",about:"Na filosofia de Spinoza, há uma única substância infinita, Deus ou Natureza; os seres particulares são modos dessa realidade. Não é uma doutrina de manipulação de energia por pensamento.",supports:"Unidade da realidade, imanência, natureza como totalidade e ética não dependente de mandamentos divinos.",tensions:"Intervenção mental direta sobre uma energia universal não é uma tese espinozista; a distinção entre força e universo precisa ser esclarecida.",rules:[[4,1],[18,1],[19,1],[23,1],[1,-1],[6,-1]]},
+{id:"monism",group:"Filosofias e metafísicas",name:"Monismo metafísico",about:"Família de posições segundo as quais a realidade tem um fundamento ou princípio último único. Existem versões físicas, idealistas, neutras e outras.",supports:"Intuição de um princípio universal que permeia ou constitui tudo.",tensions:"Se a pessoa sustenta fundamentos independentes e irredutíveis, o monismo pode não ser adequado.",rules:[[0,1],[3,1],[4,1]]},
+{id:"panentheism",group:"Filosofias e metafísicas",name:"Panenteísmo",about:"Sustenta que o universo está em Deus ou na realidade divina, mas que essa realidade é maior do que o universo. Não é sinônimo de panteísmo.",supports:"Realidade divina imanente e, simultaneamente, não limitada ao universo.",tensions:"Ainda não foi estabelecido se a pessoa acredita em uma dimensão divina que ultrapassa a natureza.",rules:[[0,1],[3,1],[4,1],[1,-1]]},
+{id:"deism",group:"Filosofias e metafísicas",name:"Deísmo",about:"Admite um princípio ou criador transcendente, distinto do universo, geralmente sem revelação ou intervenção contínua.",supports:"Princípio criador distinto do universo e realidade transcendente.",tensions:"Uma força inteiramente imanente à natureza não corresponde ao deísmo clássico.",rules:[[0,1],[1,1],[13,-1],[25,-1]]},
+{id:"naturalism",group:"Filosofias e perspectivas não religiosas",name:"Naturalismo filosófico",about:"Entende que a realidade é natural e que explicações não devem recorrer a entidades sobrenaturais. Há versões mais ou menos redutivas.",supports:"Explicações psicológicas/neurobiológicas, fim da consciência individual na morte e suficiência da ciência/filosofia.",tensions:"A crença em dimensão espiritual independente do cérebro ou força sobrenatural pode divergir do naturalismo estrito.",rules:[[5,1],[10,1],[23,1],[3,-1],[0,-1]]},
+{id:"humanism",group:"Filosofias e perspectivas não religiosas",name:"Humanismo secular",about:"Perspectiva ética que valoriza dignidade, autonomia, razão, compaixão e bem-estar humano sem exigir fundamento religioso.",supports:"Ética independente de religião, autonomia moral, desenvolvimento humano e responsabilidade coletiva.",tensions:"Não determina por si só uma posição sobre força universal, divindade ou práticas espirituais.",rules:[[19,1],[21,1],[23,1],[18,1],[26,-1]]},
+{id:"existential",group:"Filosofias e perspectivas não religiosas",name:"Existencialismo e espiritualidade existencial",about:"Investiga liberdade, responsabilidade, finitude e construção de sentido. Pode ser religioso ou não religioso, conforme o autor e a corrente.",supports:"Propósito construído, autonomia, reflexão sobre existência e finitude.",tensions:"Uma finalidade universal previamente determinada pode divergir de algumas vertentes existencialistas, mas não de todas.",rules:[[21,1],[23,1],[10,1],[18,1]]},
+{id:"ecocentrism",group:"Filosofias e perspectivas não religiosas",name:"Ecocentrismo e holismo ecológico",about:"Atribui valor à comunidade ecológica e considera interdependências entre seres, sistemas e ambientes. Não implica necessariamente crença espiritual.",supports:"Natureza como valor intrínseco, responsabilidade coletiva e efeitos das ações humanas sobre sistemas vivos.",tensions:"A afinidade ética não comprova uma metafísica de energia universal.",rules:[[4,1],[18,1],[19,1],[21,1],[22,1]]},
+{id:"agnosticism",group:"Filosofias e perspectivas não religiosas",name:"Agnosticismo",about:"Suspende ou considera limitado o conhecimento sobre a existência e natureza de Deus ou de realidades últimas. Pode coexistir com diferentes graus de crença.",supports:"Incerteza sobre natureza divina, consciência universal ou mecanismos espirituais.",tensions:"Convicções metafísicas afirmativas e bem definidas podem reduzir a identificação com agnosticismo amplo.",rules:[[0,1],[1,-1],[3,1]]},
+{id:"energy",group:"Espiritualidades independentes",name:"Espiritualidade energética contemporânea",about:"Rótulo descritivo amplo para crenças em uma força universal e em formas de interação por intenção, consciência ou práticas. Não é uma tradição unificada nem uma teoria científica estabelecida.",supports:"Força universal imanente e possibilidade de interação espiritual.",tensions:"As respostas não estabelecem mecanismos, eficácia de práticas ou crença em cura energética, chakras ou poderes específicos.",rules:[[0,1],[3,1],[4,1],[12,1],[16,1]]},
+{id:"independent",group:"Espiritualidades independentes",name:"Espiritualidade independente",about:"Trajetória espiritual construída sem compromisso necessário com instituição, doutrina ou comunidade específica.",supports:"Autonomia, exploração individual, pluralismo e abertura a práticas ou ideias diversas.",tensions:"Pode não descrever adequadamente quem deseja adesão comunitária e doutrinária estável.",rules:[[17,1],[21,1],[28,1],[29,1],[24,-1],[25,-1],[26,-1]]}
+];
+function answerValue(i){return answers["q"+i];}
+function calculateAffinities(){
+ return affinityCatalog.map(p=>{
+  let vals=p.rules.map(([i,dir])=>({v:answerValue(i),dir})).filter(x=>x.v!==undefined);
+  let support=vals.length?vals.reduce((a,x)=>a+((x.dir===1?(x.v-1):(5-x.v))/4),0)/vals.length:0;
+  let extraBoost=0, extraN=0;
+  const e=answers.e0, death=answers.e1, motivation=answers.e2, institution=answers.e3, interest=answers.e4, barrier=answers.e5;
+  const add=(yes)=>{extraBoost+=yes?1:0;extraN++;};
+  if(p.id==="christianity"||p.id==="islam"||p.id==="judaism"){add(e===0);add(death===0);add(institution===0||institution===1);}
+  if(p.id==="spiritism"){add(death===1);add(death===0);add(interest===2);}
+  if(p.id==="umbanda"||p.id==="candomble"){add(e===2);add(motivation===0||motivation===3);add(interest===4);}
+  if(p.id==="buddhism"||p.id==="zen"){add(motivation===1||motivation===2);add(interest===2);}
+  if(p.id==="hindu"){add(e===1||e===2);add(death===1||death===2);}
+  if(p.id==="pantheism"||p.id==="spinoza"){add(e===3);add(interest===1);}
+  if(p.id==="humanism"){add(interest===1);add(motivation===4);}
+  if(p.id==="ecocentrism"){add(motivation===4);add(interest===3);}
+  if(p.id==="energy"){add(e===1);add(motivation===3);}
+  if(p.id==="independent"){add(institution===3||institution===4);add(barrier===1||barrier===2);}
+  if(p.id==="naturalism"){add(e===4);add(death===3);add(interest===1);}
+  if(p.id==="agnosticism"){add(e===5);add(death===4);}
+  let n=vals.length+extraN, score=n?(support*vals.length+extraBoost)/(n)*100:0;
+  let confidence=n>=8?"Boa cobertura de respostas":n>=4?"Cobertura parcial":"Poucos indicadores disponíveis";
+  return {...p,score:Math.round(score),n,confidence};
+ }).sort((a,b)=>b.score-a.score);
+}
+function affinityLevel(n){return n>=75?"Afinidade indicativa alta":n>=58?"Afinidade parcial":n>=42?"Afinidade limitada ou mista":"Poucos pontos de aproximação";}
+function affinityCard(p){
+ return `<article class="affinity"><div class="meta">${p.group} · ${p.confidence}</div><h4>${p.name}</h4><span class="level">${affinityLevel(p.score)}</span><div class="matchbar"><span style="width:${p.score}%"></span></div><p>${p.about}</p><p><strong>O que aproxima:</strong> ${p.supports}</p><p><strong>O que pode divergir:</strong> ${p.tensions}</p></article>`;
+}
+function renderAffinityMap(){
+ const items=calculateAffinities();
+ const groups=[...new Set(items.map(x=>x.group))];
+ let html=`<h3 class="section-head">Mapa de afinidades religiosas, filosóficas e não religiosas</h3><div class="notice">Este mapa compara padrões de respostas com características gerais de cada tradição. O índice é heurístico e exploratório, não uma probabilidade de pertencimento nem uma escala psicométrica validada. Tradições internamente diversas não podem ser reduzidas a uma pontuação.</div><h3 class="section-head">Vertentes com maior aproximação</h3><div class="affinity-grid">`;
+ items.slice(0,6).forEach(p=>html+=affinityCard(p)); html+='</div>';
+ html+='<h3 class="section-head">Catálogo comparativo completo</h3><p class="catalog-note">As demais vertentes também são apresentadas para comparação. Uma posição baixa não significa incompatibilidade absoluta; pode indicar falta de informação ou divergência em um aspecto específico.</p>';
+ groups.forEach(g=>{html+=`<h4 class="section-head">${g}</h4><div class="affinity-grid">`;items.filter(x=>x.group===g).forEach(p=>html+=affinityCard(p));html+='</div>';});
+ $("affinityMap").innerHTML=html;
+ return items;
+}
+function renderDeepAnalysis(){
+ const qs=currentQuestions.map(q=>{const v=deepAnswers[q.id];return `<p><strong>${q.q}</strong><br>${v===undefined?"Não respondida":q.opts[v]}</p>`}).join("");
+ $("deepAnalysis").innerHTML=`<h3 class="section-head">Como suas respostas de aprofundamento refinam o resultado</h3><div class="affinity">${qs||"Nenhuma resposta de aprofundamento registrada."}<p class="catalog-note">As respostas adaptativas refinam a leitura, mas não alteram automaticamente uma crença que você não declarou. Questões sem resposta permanecem em aberto.</p></div>`;
+}
+function makeResult(){
+ const s=score(), dims=interpretation(s);
+ const e=extras.map((q,i)=>`${31+i}. ${q.q}\nResposta: ${q.opts[answers["e"+i]]||"Não respondida"}`).join("\n\n");
+ const deep=currentQuestions.map(q=>`${q.q}\nResposta: ${q.opts[deepAnswers[q.id]]||"Não respondida"}`).join("\n\n");
+ let summary=[];
+ if(s.transcendence>=3.5)summary.push("Há abertura a dimensões espirituais ou metafísicas.");
+ if(s.ethics>=4)summary.push("As respostas sugerem valorização da autonomia ética e da responsabilidade moral.");
+ if(s.belonging<=2.5)summary.push("Há sinais de baixa necessidade de pertencimento institucional ou reserva diante de autoridades religiosas.");
+ resultText=["TESTE – ESPIRITUALIDADE · VERSÃO 0.2","","Síntese preliminar",summary.join(" "),"","Dimensões (médias descritivas, não escalas validadas):",...dims.map(d=>`${d[0]}: ${d[1].toFixed(2)}/5\n${d[2]}`),"","Questões complementares:",e,"","Aprofundamento:",deep,"","Mapa de afinidades:",...calculateAffinities().slice(0,8).map(p=>`${p.name}: ${affinityLevel(p.score)} (${p.score}/100; índice heurístico)`),"","Nota: resultado exploratório; não constitui diagnóstico ou teste psicométrico validado."].join("\n");
+ let html=`<div class="notice">As médias das dimensões são descritivas. Alguns itens possuem sentidos diferentes e devem ser interpretados em conjunto, não como escalas psicométricas validadas.</div><div class="result-grid">`;
+ dims.forEach(d=>{html+=`<div class="result"><div class="tag">${d[0]}</div><h3>${d[1].toFixed(2)} / 5</h3><div class="bar"><span style="width:${d[1]/5*100}%"></span></div><p class="small">${d[2]}</p></div>`;});
+ html+=`</div><h3 class="section-head">Síntese inicial</h3><p>${summary.join(" ")||"As respostas não indicam uma tendência dominante nas dimensões gerais. Isso não representa ausência de espiritualidade ou de convicções."}</p><h3>Respostas complementares</h3><p class="small">${e.replaceAll("\n","<br>")}</p>`;
+ $("resultContent").innerHTML=html;
+ renderAffinityMap();
+ renderDeepAnalysis();
+}
+
+function showResults(saveDeep){
+ if(saveDeep){currentQuestions.forEach(q=>{let x=document.querySelector(`input[name="d${q.id}"]:checked`);if(x)deepAnswers[q.id]=Number(x.value);});}
+ $("deep").classList.remove("active");$("results").classList.add("active");makeResult();window.scrollTo({top:0,behavior:"smooth"});
+ // Optional secure AI endpoint. Configure window.ANALYSIS_ENDPOINT on deployment.
+ if(window.ANALYSIS_ENDPOINT){callAI();}
+}
+async function callAI(){
+ try{
+  const payload={answers,deepAnswers,scores:score(),affinities:calculateAffinities().slice(0,10).map(({id,name,score,confidence})=>({id,name,score,confidence})),instrument:"Teste – Espiritualidade",version:"0.2"};
+  const r=await fetch(window.ANALYSIS_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  if(!r.ok)throw new Error("endpoint indisponível");
+  const data=await r.json();
+  if(data.analysis){let box=document.createElement("div");box.className="card";box.innerHTML="<h3>Análise aprofundada por IA</h3><p>"+String(data.analysis).replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>")+"</p>";$("resultContent").appendChild(box);}
+ }catch(e){console.warn("Análise por IA não disponível; mantendo resultado local.",e);}
+}
+function downloadResult(){let b=new Blob([resultText],{type:"text/plain;charset=utf-8"});let a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="meu-resultado-espiritualidade.txt";a.click();URL.revokeObjectURL(a.href);}
+async function copyResult(){try{await navigator.clipboard.writeText(resultText);alert("Síntese copiada.");}catch(e){alert("Não foi possível copiar automaticamente. Use a opção de baixar o resultado.");}}
+function restart(){answers={};deepAnswers={};phase=0;currentQuestions=[];$("results").classList.remove("active");$("intro").classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+</script>
+</body></html>
